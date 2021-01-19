@@ -1,0 +1,51 @@
+{
+  "name": "@mcjeffr/react-schematicwebviewer",
+  "version": "1.0.0",
+  "description": "React wrapper around the SchematicWebViewer canvas by EngineHub",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McJeffr/react-schematicwebviewer.git"
+  },
+  "keywords": [
+    "minecraft",
+    "schematic",
+    "schematics",
+    "worldedit",
+    "schematicwebviewer"
+  ],
+  "author": "McJeffr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/McJeffr/react-schematicwebviewer/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/McJeffr/react-schematicwebviewer#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rollup": "^2.37.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "@enginehub/schematicwebviewer": "^2.1.0"
+  },
+  "dependencies": {
+    "@enginehub/schematicwebviewer": "^2.1.0"
+  }
+}
