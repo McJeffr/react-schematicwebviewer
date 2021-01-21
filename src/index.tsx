@@ -5,7 +5,7 @@ import "./styles.scss";
 const { useState, useEffect } = React;
 
 export interface ISchematicViewerProps {
-  jarUrl: string;
+  jarUrl: string | string[];
   schematic: string;
   id?: string;
   className?: string;
@@ -25,8 +25,8 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
   schematic,
   className,
   size = 500,
-  width = (size ? size : 500),
-  height = (size ? size : 500),
+  width = size ? size : 500,
+  height = size ? size : 500,
   renderArrow = false,
   renderBars = false,
   orbit = true,

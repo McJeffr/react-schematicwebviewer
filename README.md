@@ -66,10 +66,10 @@ This code displays "Loading..." in the center of the canvas that is being loaded
 
 ## Props
 
-The takes in similar props as the @enginehub/schematicwebviewer's renderSchematic function. Below is a list of all the props that you can use.
+The component takes in similar props as the @enginehub/schematicwebviewer's renderSchematic function. Below is a list of all the props that you can use.
 
 - schematic (string): A base64 string containing your schematic data. See the FAQ for more information. Required.
-- jarUrl (string): An URL to where you server the Minecraft jar version of your liking. Suggested to use a more recent jar file such as 1.16.5 to have all blocks show up properly. Required.
+- jarUrl (string | string[]): An URL to where you server the Minecraft jar version of your liking. Suggested to use a more recent jar file such as 1.16.5 to have all blocks show up properly. Can also be a string array to apply multiple texture packs on top of each other. Required.
 - id (string?): The ID of the canvas component. Optional.
 - className (string?): The CSS class name for the surrounding parent `<div>`. Optional.
 - size (number?): The size of the canvas's viewport. Optional, default: 500.
@@ -94,16 +94,16 @@ If you are on Linux, MacOS or Windows with some bash terminal installed (e.g. gi
 
 In order to render everything correctly, a texture pack is required. This texture pack can be any modern texture pack. However, since the format of a Minecraft jar is following the same structure, you can also just provide a URL to this instead.
 
+**Can I supply a texture pack for `jarUrl` instead?**
+
+Yes, you can! However, be aware that it needs to have *all* textures, it must be a complete texture pack. Most texture packs do not have this, which makes it difficult to find a texture pack. Nevertheless, you can use both by providing a `string[]` instead of only a `string`. It will then apply a texture pack on top of the jar url that you specified to ensure that all missing textures are replaced by Vanilla ones.
+
 **What value should I input for `jarUrl` then, do you have one for me?**
 
-No, I am not offering a URL for a Minecraft jar. You can possibly find one online. I've done some looking around for you, and maybe you could use `https://launcher.mojang.com/v1/objects/37fd3c903861eeff3bc24b71eed48f828b5269c8/client.jar` for a 1.16.5 jar.
+No, I am not offering a URL for a Minecraft jar. You can possibly find one online. I've done some looking around for you, and maybe you could use `https://launcher.mojang.com/v1/objects/37fd3c903861eeff3bc24b71eed48f828b5269c8/client.jar` for a 1.16.5 jar. To find the URLs for other versions, you can use a website such as [mcversions.net](https://mcversions.net/).
 
-*Disclaimer: I am not responsible for whatever approach you end up using, or explaining how to deal with CORS issues.*
-
-Another approach could be to download or extract the jar file yourself and hosting it at a static URL. You can do this via a method like an [express](https://www.npmjs.com/package/express) server, using `app.use(express.static('public'));`. More info [here](https://expressjs.com/en/starter/static-files.html).
-
-*Disclaimer: I do not endorse doing this, as re-distributing the game's jars might not be allowed. Instead, I'd suggest providing a texture pack that is allowed to be used for these types of projects, provided there is the right attribution. Additionally, proxying the official URLs of Mojang that server the client might be allowed too, but I am no legal expert so it's up to you to do what is right.*
+However, you cannot directly embed this URL in the `jarUrl` field due to the CORS policies set by Mojang. You will need to overcome these CORS issues. One such example could be to pass the request through a proxy such as [cors-anywhere](https://www.npmjs.com/package/cors-anywhere). It's up to you to set this up.
 
 ## Disclaimer
 
-I am not affiliated with Mojang A.B. or EngineHub. I do want to thank EngineHub for their amazing library to render schematics on the web.
+I am not affiliated with Mojang A.B., mcversions.net or EngineHub. I do want to thank EngineHub for their amazing library to render schematics on the web.
