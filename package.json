@@ -1,6 +1,6 @@
 {
   "name": "@mcjeffr/react-schematicwebviewer",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "React wrapper around the SchematicWebViewer canvas by EngineHub",
   "main": "dist/index.js",
   "scripts": {
