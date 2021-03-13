@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@enginehub/schematicwebviewer": "^2.1.0",
+    "@enginehub/schematicwebviewer": "^2.2.0",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "react": "^17.0.1",
@@ -44,6 +44,6 @@
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "@enginehub/schematicwebviewer": "^2.1.0"
+    "@enginehub/schematicwebviewer": "^2.2.0"
   }
 }

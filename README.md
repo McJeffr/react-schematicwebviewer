@@ -79,6 +79,7 @@ The component takes in similar props as the @enginehub/schematicwebviewer's rend
 - renderBars (boolean?): Whether or not to render a grid. Optional, default: false.
 - orbit (boolean?): Whether or not to rotate the schematic automatically. Optional, default: true.
 - antialias (boolean?): Whether antialiasing should be enabled or not. Optional, default: false.
+- backgroundColor (number | 'transparent'): The background color of the canvas that shows the schematic. Can be transparent as well.
 
 ## FAQ
 
