@@ -17,7 +17,7 @@ export interface ISchematicViewerProps {
   orbit?: boolean;
   antialias?: boolean;
   loader?: React.ReactElement;
-  backgroundColor?: number | 'transparent';
+  backgroundColor?: number | "transparent";
 }
 
 const SchematicViewer: React.FC<ISchematicViewerProps> = ({
@@ -33,7 +33,7 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
   orbit = true,
   antialias = false,
   loader,
-  backgroundColor = 0xffffff
+  backgroundColor = 0xffffff,
 }) => {
   const [canvasRef] = useState<React.RefObject<HTMLCanvasElement>>(
     React.createRef<HTMLCanvasElement>()
@@ -51,7 +51,8 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
       renderBars,
       orbit,
       antialias,
-      backgroundColor
+      backgroundColor,
+      loadingSpinner: false,
     }).then(() => {
       setLoading(false);
     });
