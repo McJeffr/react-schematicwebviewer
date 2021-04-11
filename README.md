@@ -80,6 +80,7 @@ The component takes in similar props as the @enginehub/schematicwebviewer's rend
 - orbit (boolean?): Whether or not to rotate the schematic automatically. Optional, default: true.
 - antialias (boolean?): Whether antialiasing should be enabled or not. Optional, default: false.
 - backgroundColor (number | 'transparent'): The background color of the canvas that shows the schematic. Can be transparent as well.
+- onLoaded ((() => void)?): Callback function that gets fired when the previewer has loaded.
 
 ## FAQ
 

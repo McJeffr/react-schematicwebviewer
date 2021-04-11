@@ -18,6 +18,7 @@ export interface ISchematicViewerProps {
   antialias?: boolean;
   loader?: React.ReactElement;
   backgroundColor?: number | "transparent";
+  onLoaded?: () => void;
 }
 
 const SchematicViewer: React.FC<ISchematicViewerProps> = ({
@@ -34,6 +35,7 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
   antialias = false,
   loader,
   backgroundColor = 0xffffff,
+  onLoaded,
 }) => {
   const [canvasRef] = useState<React.RefObject<HTMLCanvasElement>>(
     React.createRef<HTMLCanvasElement>()
@@ -55,6 +57,7 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
       loadingSpinner: false,
     }).then(() => {
       setLoading(false);
+      if (onLoaded) onLoaded();
     });
   }, [canvasRef]);
 
