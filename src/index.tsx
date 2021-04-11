@@ -59,7 +59,16 @@ const SchematicViewer: React.FC<ISchematicViewerProps> = ({
       setLoading(false);
       if (onLoaded) onLoaded();
     });
-  }, [canvasRef, orbit, renderArrow, renderBars, size, width, height, backgroundColor]);
+  }, [
+    canvasRef,
+    orbit,
+    renderArrow,
+    renderBars,
+    size,
+    width,
+    height,
+    backgroundColor,
+  ]);
 
   return (
     <div
